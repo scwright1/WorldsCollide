@@ -55,10 +55,9 @@ Shader "Custom/ProximityRemove" {
 
 	        // Return appropriate colour
 	       if (dist < _VisibleDistance) {
-	       	  float4 tex = tex2D(_MainTex, float4(input.tex));
-	       	  tex.a = 0.1;
-	       	  //discard;
-	       	  return tex;
+	       	  //float4 tex = tex2D(_MainTex, float4(input.tex));
+	       	  discard;
+	       	  return 0;
 	          //return tex2D(_MainTex, float4(input.tex)); // Visible
 	       }
 	       else if (dist < _VisibleDistance + _OutlineWidth) {
